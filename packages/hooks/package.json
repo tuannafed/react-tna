@@ -1,6 +1,6 @@
 {
-  "name": "tna-hooks",
-  "version": "1.0.0",
+  "name": "tna-react-hooks",
+  "version": "1.0.1",
   "description": "Hooks for TNA",
   "private": false,
   "author": "TuanNA <tuanna.fesd@gmail.com>",
@@ -40,10 +40,14 @@
     "lint": "eslint './src/**/*.{ts,tsx}' && tsc --noEmit"
   },
   "devDependencies": {
+    "@juggle/resize-observer": "^3.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
     "@types/lodash.debounce": "^4.0.9",
     "@types/react": "^18.3.12",
+    "eslint-config-custom": "workspace:*",
+    "eslint-plugin-jsdoc": "^50.4.3",
+    "eslint-plugin-tree-shaking": "^1.12.2",
     "jsdom": "^25.0.1",
     "lodash.debounce": "^4.0.8",
     "react": "18.3.1",
@@ -66,5 +70,8 @@
   },
   "directories": {
     "test": "tests"
+  },
+  "dependencies": {
+    "eslint": "8"
   }
 }

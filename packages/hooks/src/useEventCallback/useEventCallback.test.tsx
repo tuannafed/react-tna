@@ -25,7 +25,8 @@ describe('useEventCallback()', () => {
   })
 
   it('should be typed accordingly', () => {
-    const fn1: Mock<[React.MouseEvent<HTMLButtonElement>], void> = vi.fn()
+    const fn1: Mock<(event: React.MouseEvent<HTMLButtonElement>) => void> =
+      vi.fn()
     const fn1Result = renderHook(() => useEventCallback(fn1))
 
     expectTypeOf(fn1Result.result.current).toEqualTypeOf<
@@ -33,7 +34,7 @@ describe('useEventCallback()', () => {
     >()
 
     const fn2 = undefined as
-      | Mock<[React.MouseEvent<HTMLButtonElement>], void>
+      | Mock<(event: React.MouseEvent<HTMLButtonElement>) => void>
       | undefined
     const fn2Result = renderHook(() => useEventCallback(fn2))
 

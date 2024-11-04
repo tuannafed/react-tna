@@ -1,5 +1,5 @@
 {
-  "name": "tna-workspace",
+  "name": "workspace",
   "version": "1.0.0",
   "description": "React hook library, ready to use, written in Typescript.",
   "author": "TuanNA",
@@ -33,7 +33,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.27.9",
     "dotenv": "^16.4.5",
-    "eslint": "^9.14.0",
+    "eslint": "^8.56.0",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "turbo": "^2.2.3",

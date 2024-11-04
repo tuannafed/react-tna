@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { ResizeObserver } from '@juggle/resize-observer'
 import { renderHook } from '@testing-library/react'
 
