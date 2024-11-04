@@ -2,4 +2,4 @@
 'tna-hooks': major
 ---
 
-Release hooks package
+Release package

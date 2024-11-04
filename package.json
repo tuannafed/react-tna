@@ -16,16 +16,16 @@
     "preinstall": "npx only-allow pnpm",
     "dev": "turbo run dev",
     "build": "pnpm -r run build",
-    "build:core": "pnpm run build --filter @tna/core",
-    "build:hooks": "pnpm run build --filter @tna/hooks",
-    "build:shadcn-ui": "pnpm run build --filter @tna/shadcn-ui",
+    "build:core": "pnpm run build --filter tna-core",
+    "build:hooks": "pnpm run build --filter tna-hooks",
+    "build:shadcn-ui": "pnpm run build --filter tna-shadcn-ui",
     "clean": "rimraf .turbo generated && turbo run clean",
     "format": "prettier --write \"**/*.{json,md,mdx,css,scss,yaml,yml}\" --ignore-path .prettierignore",
     "lint": "turbo run lint",
     "changeset": "npx changeset",
     "version-packages": "npx changeset version",
     "publish-packages": "npx changeset publish",
-    "publish-packages-hooks": "pnpm publish --access public --filter @tna/hooks"
+    "publish-packages-hooks": "pnpm publish --access public --filter tna-hooks"
   },
   "resolutions": {
     "typescript": "^5.3.3"
