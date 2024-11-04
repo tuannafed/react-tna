@@ -1,0 +1,68 @@
+{
+  "name": "tna-hooks",
+  "version": "1.0.0",
+  "description": "Hooks for TNA",
+  "private": false,
+  "author": "TuanNA <tuanna.fesd@gmail.com>",
+  "homepage": "",
+  "keywords": [
+    "typescript",
+    "react",
+    "hooks"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rimraf dist .turbo *.tsbuildinfo",
+    "lint": "eslint './src/**/*.{ts,tsx}' && tsc --noEmit"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@types/react": "^18",
+    "jsdom": "^25.0.1",
+    "react": "18.3.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5",
+    "vitest": "^2.1.4"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0  || ^17 || ^18"
+  },
+  "engines": {
+    "node": ">=16.15.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "directories": {
+    "test": "tests"
+  }
+}
