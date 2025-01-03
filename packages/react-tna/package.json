@@ -1,0 +1,80 @@
+{
+  "name": "react-tna",
+  "version": "1.1.0",
+  "description": "React hook library, ready to use, written in Typescript.",
+  "private": false,
+  "author": "TuanNA <tuanna.fesd@gmail.com>",
+  "homepage": "",
+  "keywords": [
+    "typescript",
+    "react",
+    "hooks"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rimraf dist .turbo *.tsbuildinfo",
+    "lint": "eslint './src/**/*.{ts,tsx}' && tsc --noEmit"
+  },
+  "devDependencies": {
+    "@juggle/resize-observer": "^3.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@types/lodash.debounce": "^4.0.9",
+    "@types/react": "^18.3.12",
+    "eslint-config-custom": "workspace:*",
+    "eslint-plugin-jsdoc": "^50.4.3",
+    "eslint-plugin-tree-shaking": "^1.12.2",
+    "jsdom": "^25.0.1",
+    "lodash.debounce": "^4.0.8",
+    "react": "18.3.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0  || ^17 || ^18"
+  },
+  "engines": {
+    "node": ">=16.15.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuannafed/react-tna"
+  },
+  "bugs": {
+    "url": "https://github.com/tuannafed/react-tna/issues"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "eslint": "8"
+  }
+}

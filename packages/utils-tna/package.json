@@ -1,0 +1,65 @@
+{
+  "name": "utils-tna",
+  "version": "1.0.1",
+  "private": false,
+  "sideEffects": false,
+  "type": "module",
+  "description": "This is the repository to make some utils functions, re-libraries, helpers, constants, types, etc...",
+  "main": "index.js",
+  "keywords": [
+    "dayjs",
+    "http-status-code",
+    "dayjs-utils",
+    "lodash"
+  ],
+  "author": "TuanNA <tuanna.fesd@gmail.com>",
+  "license": "ISC",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "type-check": "tsc --noEmit",
+    "all-check": "npm run lint && npm run format && npm run type-check",
+    "clean": "rimraf dist node_modules"
+  },
+  "devDependencies": {
+    "@edge-runtime/vm": "^5.0.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/qs": "^6.9.17",
+    "colorette": "^2.0.20",
+    "dayjs": "^1.11.13",
+    "eslint": "^9.17.0",
+    "eslint-config-custom": "workspace:*",
+    "eslint-plugin-jsdoc": "^50.6.1",
+    "eslint-plugin-tree-shaking": "^1.12.2",
+    "lodash": "^4.17.21",
+    "markdown-table": "^3.0.4",
+    "prettier": "^3.4.2",
+    "qs": "^6.13.1",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=16.15.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuannafed/utils-tna"
+  },
+  "bugs": {
+    "url": "https://github.com/tuannafed/utils-tna/issues"
+  },
+  "directories": {
+    "test": "tests"
+  }
+}

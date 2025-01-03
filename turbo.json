@@ -21,6 +21,10 @@
     "clean": {
       "outputs": [],
       "cache": false
+    },
+    "generate-doc": {
+      "dependsOn": ["reacttna#build"],
+      "outputs": ["generated/**", "README.md", "packages/react-tna/README.md"]
     }
   },
   "globalDependencies": ["tsconfig.json"]

@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "description": "Base configuration for Eslint",
   "main": "index.cjs",
-  "author": "Julien CARON <juliencaron@protonmail.com>",
+  "author": "TuanNA <tuanna.fesd@gmail.com>",
   "license": "MIT",
   "type": "module",
   "devDependencies": {

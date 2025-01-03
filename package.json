@@ -1,42 +1,56 @@
 {
   "name": "workspace",
+  "private": false,
   "version": "1.0.0",
   "description": "React hook library, ready to use, written in Typescript.",
-  "author": "TuanNA",
-  "homepage": "",
+  "author": "TuanNA <tuanna.fed@gmail.com>",
+  "homepage": "https://github.com/tuannafed/react-tna",
   "module": "true",
   "type": "module",
   "keywords": [
     "typescript",
     "react",
-    "hooks"
+    "hooks",
+    "utils",
+    "helpers",
+    "library"
   ],
   "license": "ISC",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "turbo run dev",
-    "build": "pnpm -r run build",
-    "build:core": "pnpm run build --filter tna-core",
-    "build:hooks": "pnpm run build --filter tna-hooks",
-    "build:shadcn-ui": "pnpm run build --filter tna-shadcn-ui",
-    "clean": "rimraf .turbo generated && turbo run clean",
-    "format": "prettier --write \"**/*.{json,md,mdx,css,scss,yaml,yml}\" --ignore-path .prettierignore",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "clean": "rimraf .turbo generated && turbo run clean && rm -rf node_modules packages/*/node_modules",
+    "format": "prettier --write \"**/*.{json,md,mdx,css,scss,yaml,yml,ts,tsx,js,jsx}\" --ignore-path .prettierignore",
     "lint": "turbo run lint",
+    "update-testing-issue": "zx ./scripts/update-testing-issue.js",
+    "update-algolia-index": "zx ./scripts/update-algolia-index.js",
+    "gen-hook": "turbo gen hook --config \"turbo/generators/config.cts\" && pnpm format",
+    "gen-util": "turbo gen util --config \"turbo/generators/config.cts\" && pnpm format",
     "changeset": "npx changeset",
-    "version-packages": "npx changeset version",
-    "publish-packages": "npx changeset publish",
-    "publish-packages-hooks": "pnpm publish --access public --filter tna-hooks"
+    "changeset-version": "npx changeset version",
+    "changeset-publish": "npx changeset publish",
+    "generate-doc": "zx ./scripts/generate-doc.js"
   },
   "resolutions": {
     "typescript": "^5.3.3"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.9",
+    "@turbo/gen": "^2.2.3",
+    "date-fns": "^4.1.0",
     "dotenv": "^16.4.5",
     "eslint": "^8.56.0",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
-    "turbo": "^2.2.3",
+    "turbo": "^2.3.3",
+    "typedoc": "^0.25.9",
+    "typedoc-plugin-markdown": "^3.17.1",
+    "typedoc-plugin-mdn-links": "^3.1.17",
+    "typedoc-plugin-missing-exports": "^2.2.0",
     "zx": "^8.2.0"
   },
   "packageManager": "pnpm@9.0.0",
@@ -45,9 +59,9 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/tuannafed/react-tna"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/tuannafed/react-tna/issues"
   }
 }
