@@ -25,7 +25,7 @@ describe('useScript', () => {
 
     // First load the script
     const { result } = renderHook(() =>
-      useScript(src, { removeOnUnmount: true }),
+      useScript(src, { removeOnUnmount: true })
     )
 
     expect(result.current).toBe('loading')
@@ -47,7 +47,7 @@ describe('useScript', () => {
 
     // Try loading the script again
     const { result: result2 } = renderHook(() =>
-      useScript(src, { removeOnUnmount: true }),
+      useScript(src, { removeOnUnmount: true })
     )
 
     expect(result2.current).toBe('loading')

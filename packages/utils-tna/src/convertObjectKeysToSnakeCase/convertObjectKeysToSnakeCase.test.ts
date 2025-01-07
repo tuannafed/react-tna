@@ -1,4 +1,6 @@
-import { describe, test, expect } from 'vitest'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { describe, expect, test } from 'vitest'
+
 import { convertObjectKeysToSnakeCase } from './convertObjectKeysToSnakeCase'
 
 describe('convertObjectKeysToSnakeCase', () => {

@@ -1,5 +1,6 @@
-import { usePrevious } from './usePrevious'
 import React from 'react'
+
+import { usePrevious } from './usePrevious'
 
 export default function Component() {
   const [count, setCount] = React.useState(0)

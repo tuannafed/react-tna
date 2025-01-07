@@ -5,7 +5,10 @@ export default function Component() {
 
   return (
     <div>
-      <p>Current theme: {isDarkMode ? 'dark' : 'light'}</p>
+      <p>
+        Current theme:
+        {isDarkMode ? 'dark' : 'light'}
+      </p>
       <button onClick={toggle}>Toggle</button>
       <button onClick={enable}>Enable</button>
       <button onClick={disable}>Disable</button>

@@ -16,12 +16,15 @@ function extractFunctionDetails(
   ]
 
   return functionMatches.map(match => {
-    const name = match[1]
+    const name = match[1] || ''
     const description = match[2]
-      .trim()
-      .split('\n')
-      .map(line => line.trim())
-      .join(' ') // Clean up multi-line description
+      ? match[2]
+          .trim()
+          .split('\n')
+          .map(line => line.trim())
+          .join(' ') // Clean up multi-line description
+      : ''
+
     return { name, description }
   })
 }
@@ -113,4 +116,5 @@ MIT
 const functionDetails = getAllFunctionDetails()
 generateReadme(functionDetails)
 
+// eslint-disable-next-line no-console
 console.log('README.md has been generated successfully!')

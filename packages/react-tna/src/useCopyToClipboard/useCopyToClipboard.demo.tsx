@@ -21,7 +21,10 @@ export default function Component() {
         <button onClick={handleCopy('B')}>B</button>
         <button onClick={handleCopy('C')}>C</button>
       </div>
-      <p>Copied value: {copiedText ?? 'Nothing is copied yet!'}</p>
+      <p>
+        Copied value:
+        {copiedText ?? 'Nothing is copied yet!'}
+      </p>
     </>
   )
 }

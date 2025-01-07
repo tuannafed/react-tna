@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Removes empty query parameters from an object or array of objects.
  * @param {query: Record<string, any>} data The object or array of objects to process. It can be any object or array of objects.

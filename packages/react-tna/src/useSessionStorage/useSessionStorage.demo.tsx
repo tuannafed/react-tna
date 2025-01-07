@@ -5,7 +5,10 @@ export default function Component() {
 
   return (
     <div>
-      <p>Count: {value}</p>
+      <p>
+        Count:
+        {value}
+      </p>
       <button
         onClick={() => {
           setValue((x: number) => x + 1)

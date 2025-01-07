@@ -27,7 +27,7 @@ for (const hook of hooks) {
 // Create the JSON file
 fs.writeFileSync(
   path.join(generatedDir, 'docs', 'hooks.json'),
-  JSON.stringify(hooks, null, 2),
+  JSON.stringify(hooks, null, 2)
 )
 
 // Update the README file

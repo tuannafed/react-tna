@@ -9,7 +9,7 @@ describe('useDebounceCallback()', () => {
     const delay = 500
     const debouncedCallback = vitest.fn()
     const { result } = renderHook(() =>
-      useDebounceCallback(debouncedCallback, delay),
+      useDebounceCallback(debouncedCallback, delay)
     )
 
     act(() => {
@@ -30,7 +30,7 @@ describe('useDebounceCallback()', () => {
     const delay = 500
     const debouncedCallback = vitest.fn()
     const { result } = renderHook(() =>
-      useDebounceCallback(debouncedCallback, delay, { leading: true }),
+      useDebounceCallback(debouncedCallback, delay, { leading: true })
     )
 
     act(() => {
@@ -70,7 +70,7 @@ describe('useDebounceCallback()', () => {
     const delay = 500
     const debouncedCallback = vitest.fn()
     const { result } = renderHook(() =>
-      useDebounceCallback(debouncedCallback, delay),
+      useDebounceCallback(debouncedCallback, delay)
     )
 
     act(() => {
@@ -89,7 +89,7 @@ describe('useDebounceCallback()', () => {
     const delay = 500
     const debouncedCallback = vitest.fn()
     const { result } = renderHook(() =>
-      useDebounceCallback(debouncedCallback, delay),
+      useDebounceCallback(debouncedCallback, delay)
     )
 
     act(() => {

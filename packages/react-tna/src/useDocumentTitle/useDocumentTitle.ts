@@ -22,7 +22,7 @@ type UseDocumentTitleOptions = {
  */
 export function useDocumentTitle(
   title: string,
-  options: UseDocumentTitleOptions = {},
+  options: UseDocumentTitleOptions = {}
 ): void {
   const { preserveTitleOnUnmount = true } = options
   const defaultTitle = useRef<string | null>(null)

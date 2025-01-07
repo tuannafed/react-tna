@@ -8,7 +8,7 @@ export function updateReadme(hooks) {
     .readFileSync(readmeFile, 'utf-8')
     .replace(
       /<!-- HOOKS:START -->(.*)<!-- HOOKS:END -->/gms,
-      `<!-- HOOKS:START -->\n\n${hooks.map(formatHook).join('\n')}\n<!-- HOOKS:END -->`,
+      `<!-- HOOKS:START -->\n\n${hooks.map(formatHook).join('\n')}\n<!-- HOOKS:END -->`
     )
 
   fs.writeFileSync(readmeFile, data, 'utf-8')

@@ -1,4 +1,4 @@
-import { statusCodeToReasonPhrase, reasonPhraseToStatusCode } from './utils'
+import { reasonPhraseToStatusCode, statusCodeToReasonPhrase } from './utils'
 
 /**
  * Returns the reason phrase for the given status code.
@@ -12,6 +12,7 @@ export function getReasonPhrase(statusCode: number | string): string {
   if (!result) {
     throw new Error(`Status code does not exist: ${statusCode}`)
   }
+
   return result
 }
 
@@ -27,5 +28,6 @@ export function getStatusCode(reasonPhrase: string): number {
   if (!result) {
     throw new Error(`Reason phrase does not exist: ${reasonPhrase}`)
   }
+
   return result
 }

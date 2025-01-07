@@ -29,7 +29,9 @@ export default function Component() {
   useEventListener('visibilitychange', onVisibilityChange, documentRef)
 
   // example with element based event
-  useEventListener('click', onClick, buttonRef)
+  if (buttonRef.current) {
+    useEventListener('click', onClick, buttonRef as any)
+  }
 
   return (
     <div style={{ minHeight: '200vh' }}>

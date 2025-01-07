@@ -49,7 +49,7 @@ type UseMapReturn<K, V> = [
  * ```
  */
 export function useMap<K, V>(
-  initialState: MapOrEntries<K, V> = new Map(),
+  initialState: MapOrEntries<K, V> = new Map()
 ): UseMapReturn<K, V> {
   const [map, setMap] = useState(new Map(initialState))
 

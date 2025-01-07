@@ -9,5 +9,10 @@ export default function Component() {
     setCount(prev => prev + 1)
   })
 
-  return <p>Click count: {count}</p>
+  return (
+    <p>
+      Click count:
+      {count}
+    </p>
+  )
 }

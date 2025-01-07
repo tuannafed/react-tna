@@ -1,11 +1,13 @@
-import { describe, test, expect } from 'vitest'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { describe, expect, test } from 'vitest'
+
+import codes from './codes.json'
 import {
-  getStatusCode,
   getReasonPhrase,
+  getStatusCode,
   ReasonPhrases,
   StatusCodes,
 } from './httpCode'
-import codes from './codes.json'
 
 describe('functions', () => {
   test('StatusCodes', () => {

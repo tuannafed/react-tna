@@ -27,7 +27,7 @@ export default function Component() {
       <button onClick={reset}>Reset</button>
       <button onClick={setAll}>Set new data</button>
       <button onClick={remove} disabled={!map.get('hello')}>
-        {'Remove "hello"'}
+        Remove &quot;hello&quot;
       </button>
 
       <pre>

@@ -67,8 +67,8 @@ export function useTernaryDarkMode({
   const toggleTernaryDarkMode = () => {
     const modes: TernaryDarkMode[] = ['light', 'system', 'dark']
     setMode((prevMode): TernaryDarkMode => {
-      const nextIndex = (modes.indexOf(prevMode) + 1) % modes.length
-      return modes[nextIndex]
+      const nextIndex = (modes.indexOf(prevMode || 'system') + 1) % modes.length
+      return modes[nextIndex] as TernaryDarkMode
     })
   }
 

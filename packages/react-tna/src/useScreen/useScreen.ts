@@ -40,7 +40,7 @@ export function useScreen(options?: Partial<UseScreenOptions<true>>): Screen
  * ```
  */
 export function useScreen(
-  options: Partial<UseScreenOptions<boolean>> = {},
+  options: Partial<UseScreenOptions<boolean>> = {}
 ): Screen | undefined {
   let { initializeWithValue = true } = options
   if (IS_SERVER) {
@@ -63,7 +63,7 @@ export function useScreen(
 
   const debouncedSetScreen = useDebounceCallback(
     setScreen,
-    options.debounceDelay,
+    options.debounceDelay
   )
 
   // Handles the resize event of the window.

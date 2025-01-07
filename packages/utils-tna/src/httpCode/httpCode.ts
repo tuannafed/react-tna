@@ -1,7 +1,7 @@
 import { HttpStatus } from './legacy'
-import { StatusCodes } from './status-codes'
 import { ReasonPhrases } from './reason-phrases'
-import { getStatusCode, getReasonPhrase } from './utils-functions'
+import { StatusCodes } from './status-codes'
+import { getReasonPhrase, getStatusCode } from './utils-functions'
 
 export {
   HttpStatus,

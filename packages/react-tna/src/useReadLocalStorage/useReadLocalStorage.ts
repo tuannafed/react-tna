@@ -18,12 +18,12 @@ type Options<T, InitializeWithValue extends boolean | undefined> = {
 // SSR version
 export function useReadLocalStorage<T>(
   key: string,
-  options: Options<T, false>,
+  options: Options<T, false>
 ): T | null | undefined
 // CSR version
 export function useReadLocalStorage<T>(
   key: string,
-  options?: Partial<Options<T, true>>,
+  options?: Partial<Options<T, true>>
 ): T | null
 /**
  * Custom hook that reads a value from [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), closely related to [`useLocalStorage()`](https://domain.com//use-local-storage).
@@ -41,7 +41,7 @@ export function useReadLocalStorage<T>(
  */
 export function useReadLocalStorage<T>(
   key: string,
-  options: Partial<Options<T, boolean>> = {},
+  options: Partial<Options<T, boolean>> = {}
 ): T | null | undefined {
   let { initializeWithValue = true } = options
   if (IS_SERVER) {
@@ -68,7 +68,7 @@ export function useReadLocalStorage<T>(
 
       return parsed as T
     },
-    [options],
+    [options]
   )
 
   // Get from local storage then
@@ -108,7 +108,7 @@ export function useReadLocalStorage<T>(
       }
       setStoredValue(readValue())
     },
-    [key, readValue],
+    [key, readValue]
   )
 
   // this only works for other documents, not the current one

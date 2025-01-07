@@ -94,7 +94,9 @@ export function useIntersectionObserver({
     entry: undefined,
   }))
 
-  const callbackRef = useRef<UseIntersectionObserverOptions['onChange']>()
+  const callbackRef = useRef<UseIntersectionObserverOptions['onChange'] | null>(
+    null
+  )
 
   callbackRef.current = onChange
 
@@ -135,7 +137,7 @@ export function useIntersectionObserver({
           }
         })
       },
-      { threshold, root, rootMargin },
+      { threshold, root, rootMargin }
     )
 
     observer.observe(ref)

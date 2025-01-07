@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Convert object keys to snake case.
  * @param {T extends Record<string, unknown> | Record<string, unknown>[]} data The object or array of objects to process. It can be any object or array of objects.

@@ -36,7 +36,7 @@ describe('useDebounceValue()', () => {
   it('should handle options', () => {
     const delay = 500
     const { result } = renderHook(() =>
-      useDebounceValue('initial', delay, { leading: true }),
+      useDebounceValue('initial', delay, { leading: true })
     )
 
     expect(result.current[0]).toBe('initial')

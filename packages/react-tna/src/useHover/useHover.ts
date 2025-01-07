@@ -1,7 +1,5 @@
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
 import type { RefObject } from 'react'
-
 import { useEventListener } from '../useEventListener'
 
 /**
@@ -19,7 +17,7 @@ import { useEventListener } from '../useEventListener'
  * ```
  */
 export function useHover<T extends HTMLElement = HTMLElement>(
-  elementRef: RefObject<T>,
+  elementRef: RefObject<T | null>
 ): boolean {
   const [value, setValue] = useState<boolean>(false)
 
@@ -30,8 +28,8 @@ export function useHover<T extends HTMLElement = HTMLElement>(
     setValue(false)
   }
 
-  useEventListener('mouseenter', handleMouseEnter, elementRef)
-  useEventListener('mouseleave', handleMouseLeave, elementRef)
+  useEventListener('mouseenter', handleMouseEnter, elementRef as RefObject<T>)
+  useEventListener('mouseleave', handleMouseLeave, elementRef as RefObject<T>)
 
   return value
 }

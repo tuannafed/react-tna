@@ -6,7 +6,7 @@ export function getHooks() {
   const jsonFile = fs.readFileSync(jsonFilePath, 'utf-8')
   if (!jsonFile) {
     throw new Error(
-      `Could not read ${jsonFilePath} file. Please run the typedoc command first.`,
+      `Could not read ${jsonFilePath} file. Please run the typedoc command first.`
     )
   }
   return JSON.parse(jsonFile).children.map(child => {

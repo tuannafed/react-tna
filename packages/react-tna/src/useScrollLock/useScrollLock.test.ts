@@ -34,7 +34,7 @@ describe('useScrollLock()', () => {
     document.body.appendChild(target)
 
     const { unmount } = renderHook(() =>
-      useScrollLock({ lockTarget: '#target' }),
+      useScrollLock({ lockTarget: '#target' })
     )
 
     expect(target.style.overflow).toBe('hidden')
@@ -81,7 +81,7 @@ describe('useScrollLock()', () => {
 
   it('should unlock on unmount even with initial is locked', () => {
     const { unmount, result } = renderHook(() =>
-      useScrollLock({ autoLock: false }),
+      useScrollLock({ autoLock: false })
     )
 
     expect(document.body.style.overflow).toBe('')
@@ -95,7 +95,7 @@ describe('useScrollLock()', () => {
 
   it('should fallback to document.body if the target element is not found', () => {
     const { unmount } = renderHook(() =>
-      useScrollLock({ lockTarget: '#non-existing' }),
+      useScrollLock({ lockTarget: '#non-existing' })
     )
 
     expect(document.body.style.overflow).toBe('hidden')

@@ -63,7 +63,7 @@ const IS_SERVER = typeof window === 'undefined'
  * ```
  */
 export function useScrollLock(
-  options: UseScrollLockOptions = {},
+  options: UseScrollLockOptions = {}
 ): UseScrollLockReturn {
   const { autoLock = true, lockTarget, widthReflow = true } = options
   const [isLocked, setIsLocked] = useState(false)
@@ -134,7 +134,6 @@ export function useScrollLock(
     return () => {
       unlock()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoLock, lockTarget, widthReflow])
 
   return { isLocked, lock, unlock }

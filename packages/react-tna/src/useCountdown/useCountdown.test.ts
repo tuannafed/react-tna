@@ -7,7 +7,7 @@ vitest.useFakeTimers()
 describe('useCountdown()', () => {
   it('should return callable functions', () => {
     const { result } = renderHook(() =>
-      useCountdown({ countStart: 60, intervalMs: 500, isIncrement: false }),
+      useCountdown({ countStart: 60, intervalMs: 500, isIncrement: false })
     )
 
     expect(result.current[0]).toBe(60)
@@ -18,7 +18,7 @@ describe('useCountdown()', () => {
 
   it('should increment count', () => {
     const { result } = renderHook(() =>
-      useCountdown({ countStart: 60, intervalMs: 500, isIncrement: true }),
+      useCountdown({ countStart: 60, intervalMs: 500, isIncrement: true })
     )
 
     act(result.current[1].startCountdown)
@@ -31,7 +31,7 @@ describe('useCountdown()', () => {
 
   it('should decrement count', () => {
     const { result } = renderHook(() =>
-      useCountdown({ countStart: 60, intervalMs: 500 }),
+      useCountdown({ countStart: 60, intervalMs: 500 })
     )
 
     act(result.current[1].startCountdown)
@@ -53,7 +53,7 @@ describe('useCountdown()', () => {
 
   it('should accept intervalMs', () => {
     const { result } = renderHook(() =>
-      useCountdown({ countStart: 60, intervalMs: 500 }),
+      useCountdown({ countStart: 60, intervalMs: 500 })
     )
 
     expect(result.current[0]).toBe(60)
@@ -71,7 +71,7 @@ describe('useCountdown()', () => {
 
   it('should stop at countStop (default: 0)', () => {
     const { result } = renderHook(() =>
-      useCountdown({ countStart: 60, intervalMs: 1000 }),
+      useCountdown({ countStart: 60, intervalMs: 1000 })
     )
 
     expect(result.current[0]).toBe(60)
@@ -95,7 +95,7 @@ describe('useCountdown()', () => {
 
   it('should stop at custom countStop', () => {
     const { result } = renderHook(() =>
-      useCountdown({ countStart: 60, intervalMs: 1000, countStop: 30 }),
+      useCountdown({ countStart: 60, intervalMs: 1000, countStop: 30 })
     )
 
     expect(result.current[0]).toBe(60)
@@ -119,7 +119,7 @@ describe('useCountdown()', () => {
 
   it('should stop countdown', () => {
     const { result } = renderHook(() =>
-      useCountdown({ countStart: 60, intervalMs: 1000 }),
+      useCountdown({ countStart: 60, intervalMs: 1000 })
     )
 
     expect(result.current[0]).toBe(60)
@@ -143,7 +143,7 @@ describe('useCountdown()', () => {
         intervalMs: 1000,
         countStop: 20,
         isIncrement: true,
-      }),
+      })
     )
 
     expect(result.current[0]).toBe(10)
@@ -168,7 +168,7 @@ describe('useCountdown()', () => {
 
   it('should reset count', () => {
     const { result } = renderHook(() =>
-      useCountdown({ countStart: 60, intervalMs: 1000 }),
+      useCountdown({ countStart: 60, intervalMs: 1000 })
     )
 
     act(result.current[1].startCountdown)

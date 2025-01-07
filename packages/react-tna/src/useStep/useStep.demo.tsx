@@ -14,9 +14,18 @@ export default function Component() {
 
   return (
     <>
-      <p>Current step is {currentStep}</p>
-      <p>Can go to previous step {canGoToPrevStep ? 'yes' : 'no'}</p>
-      <p>Can go to next step {canGoToNextStep ? 'yes' : 'no'}</p>
+      <p>
+        Current step is
+        {currentStep}
+      </p>
+      <p>
+        Can go to previous step
+        {canGoToPrevStep ? 'yes' : 'no'}
+      </p>
+      <p>
+        Can go to next step
+        {canGoToNextStep ? 'yes' : 'no'}
+      </p>
       <button onClick={goToNextStep}>Go to next step</button>
       <button onClick={goToPrevStep}>Go to previous step</button>
       <button onClick={reset}>Reset</button>

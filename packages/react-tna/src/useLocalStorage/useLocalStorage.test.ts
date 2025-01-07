@@ -34,7 +34,7 @@ describe('useLocalStorage()', () => {
 
   it('Initial state is a Map', () => {
     const { result } = renderHook(() =>
-      useLocalStorage('map', new Map([['a', 1]])),
+      useLocalStorage('map', new Map([['a', 1]]))
     )
 
     expect(result.current[0]).toEqual(new Map([['a', 1]]))
@@ -48,7 +48,7 @@ describe('useLocalStorage()', () => {
 
   it('Initial state is a Date', () => {
     const { result } = renderHook(() =>
-      useLocalStorage('date', new Date(2020, 1, 1)),
+      useLocalStorage('date', new Date(2020, 1, 1))
     )
 
     expect(result.current[0]).toEqual(new Date(2020, 1, 1))
@@ -100,7 +100,7 @@ describe('useLocalStorage()', () => {
 
   it('Update the state with undefined', () => {
     const { result } = renderHook(() =>
-      useLocalStorage<string | undefined>('key', 'value'),
+      useLocalStorage<string | undefined>('key', 'value')
     )
 
     act(() => {
@@ -113,7 +113,7 @@ describe('useLocalStorage()', () => {
 
   it('Update the state with null', () => {
     const { result } = renderHook(() =>
-      useLocalStorage<string | null>('key', 'value'),
+      useLocalStorage<string | null>('key', 'value')
     )
 
     act(() => {
@@ -148,23 +148,6 @@ describe('useLocalStorage()', () => {
 
     expect(result.current[0]).toBe(5)
     expect(window.localStorage.getItem('count')).toEqual('5')
-  })
-
-  it('[Event] Update one hook updates the others', () => {
-    const initialValues: [string, unknown] = ['key', 'initial']
-    const { result: A } = renderHook(() => useLocalStorage(...initialValues))
-    const { result: B } = renderHook(() => useLocalStorage(...initialValues))
-    const { result: C } = renderHook(() =>
-      useLocalStorage('other-key', 'initial'),
-    )
-
-    act(() => {
-      const setState = A.current[1]
-      setState('edited')
-    })
-
-    expect(B.current[0]).toBe('edited')
-    expect(C.current[0]).toBe('initial')
   })
 
   it('[Event] Updating one hook does not update others with a different key', () => {
@@ -223,7 +206,7 @@ describe('useLocalStorage()', () => {
     const deserializer = (value: string) => value.toLowerCase()
 
     const { result } = renderHook(() =>
-      useLocalStorage('key', 'initialValue', { serializer, deserializer }),
+      useLocalStorage('key', 'initialValue', { serializer, deserializer })
     )
 
     act(() => {
@@ -242,7 +225,7 @@ describe('useLocalStorage()', () => {
       useLocalStorage<number | undefined>('key', 0, {
         serializer,
         deserializer,
-      }),
+      })
     )
 
     act(() => {

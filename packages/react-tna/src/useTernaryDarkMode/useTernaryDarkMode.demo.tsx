@@ -12,8 +12,14 @@ export default function Component() {
 
   return (
     <div>
-      <p>Current theme: {isDarkMode ? 'dark' : 'light'}</p>
-      <p>ternaryMode: {ternaryDarkMode}</p>
+      <p>
+        Current theme:
+        {isDarkMode ? 'dark' : 'light'}
+      </p>
+      <p>
+        ternaryMode:
+        {ternaryDarkMode}
+      </p>
       <p>
         Toggle between three modes
         <button onClick={toggleTernaryDarkMode}>
@@ -26,7 +32,6 @@ export default function Component() {
         <select
           name="select-ternaryDarkMode"
           onChange={ev => {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
             setTernaryDarkMode(ev.target.value as TernaryDarkMode)
           }}
           value={ternaryDarkMode}

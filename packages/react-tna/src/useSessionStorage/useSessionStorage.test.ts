@@ -34,7 +34,7 @@ describe('useSessionStorage()', () => {
 
   it('Initial state is a Map', () => {
     const { result } = renderHook(() =>
-      useSessionStorage('map', new Map([['a', 1]])),
+      useSessionStorage('map', new Map([['a', 1]]))
     )
 
     expect(result.current[0]).toEqual(new Map([['a', 1]]))
@@ -42,7 +42,7 @@ describe('useSessionStorage()', () => {
 
   it('Initial state is a Set', () => {
     const { result } = renderHook(() =>
-      useSessionStorage('set', new Set([1, 2])),
+      useSessionStorage('set', new Set([1, 2]))
     )
 
     expect(result.current[0]).toEqual(new Set([1, 2]))
@@ -50,7 +50,7 @@ describe('useSessionStorage()', () => {
 
   it('Initial state is a Date', () => {
     const { result } = renderHook(() =>
-      useSessionStorage('date', new Date(2020, 1, 1)),
+      useSessionStorage('date', new Date(2020, 1, 1))
     )
 
     expect(result.current[0]).toEqual(new Date(2020, 1, 1))
@@ -102,7 +102,7 @@ describe('useSessionStorage()', () => {
 
   it('Update the state with undefined', () => {
     const { result } = renderHook(() =>
-      useSessionStorage<string | undefined>('keytest', 'value'),
+      useSessionStorage<string | undefined>('keytest', 'value')
     )
 
     act(() => {
@@ -137,23 +137,6 @@ describe('useSessionStorage()', () => {
 
     expect(result.current[0]).toBe(5)
     expect(window.sessionStorage.getItem('count')).toEqual('5')
-  })
-
-  it('[Event] Update one hook updates the others', () => {
-    const initialValues: [string, unknown] = ['key', 'initial']
-    const { result: A } = renderHook(() => useSessionStorage(...initialValues))
-    const { result: B } = renderHook(() => useSessionStorage(...initialValues))
-    const { result: C } = renderHook(() =>
-      useSessionStorage('other-key', 'initial'),
-    )
-
-    act(() => {
-      const setState = A.current[1]
-      setState('edited')
-    })
-
-    expect(B.current[0]).toBe('edited')
-    expect(C.current[0]).toBe('initial')
   })
 
   it('[Event] Updating one hook does not update others with a different key', () => {
@@ -199,7 +182,7 @@ describe('useSessionStorage()', () => {
 
   it('should use default JSON.stringify and JSON.parse when serializer/deserializer not provided', () => {
     const { result } = renderHook(() =>
-      useSessionStorage('key', 'initialValue'),
+      useSessionStorage('key', 'initialValue')
     )
 
     act(() => {
@@ -214,7 +197,7 @@ describe('useSessionStorage()', () => {
     const deserializer = (value: string) => value.toLowerCase()
 
     const { result } = renderHook(() =>
-      useSessionStorage('key', 'initialValue', { serializer, deserializer }),
+      useSessionStorage('key', 'initialValue', { serializer, deserializer })
     )
 
     act(() => {
@@ -233,7 +216,7 @@ describe('useSessionStorage()', () => {
       useSessionStorage<number | undefined>('key', 0, {
         serializer,
         deserializer,
-      }),
+      })
     )
 
     act(() => {

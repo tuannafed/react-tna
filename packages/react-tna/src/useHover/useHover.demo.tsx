@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { useHover } from './useHover'
 
 export default function Component() {
-  const hoverRef = useRef(null)
+  const hoverRef = useRef<HTMLDivElement>(null)
   const isHover = useHover(hoverRef)
 
   return (

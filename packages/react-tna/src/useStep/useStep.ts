@@ -50,7 +50,7 @@ export function useStep(maxStep: number): [number, UseStepActions] {
 
       throw new Error('Step not valid')
     },
-    [maxStep, currentStep],
+    [maxStep, currentStep]
   )
 
   const goToNextStep = useCallback(() => {

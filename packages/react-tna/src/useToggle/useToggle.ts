@@ -18,7 +18,7 @@ import type { Dispatch, SetStateAction } from 'react'
  * ```
  */
 export function useToggle(
-  defaultValue?: boolean,
+  defaultValue?: boolean
 ): [boolean, () => void, Dispatch<SetStateAction<boolean>>] {
   const [value, setValue] = useState(!!defaultValue)
 

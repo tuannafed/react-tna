@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { convertObjectKeysToSnakeCase } from 'src/convertObjectKeysToSnakeCase'
-import { describe, test, expect } from 'vitest'
+import { describe, expect, test } from 'vitest'
 
 describe('convertObjectKeysToSnakeCase', () => {
   test('should convert keys to snake_case in an object', () => {

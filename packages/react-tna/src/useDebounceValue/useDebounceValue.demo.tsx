@@ -1,11 +1,18 @@
 import { useDebounceValue } from './useDebounceValue'
 
-export default function Component({ defaultValue = 'John' }) {
+export default function Component({
+  defaultValue = 'John',
+}: {
+  defaultValue?: string
+}) {
   const [debouncedValue, setValue] = useDebounceValue(defaultValue, 500)
 
   return (
     <div>
-      <p>Debounced value: {debouncedValue}</p>
+      <p>
+        Debounced value:
+        {debouncedValue}
+      </p>
 
       <input
         type="text"

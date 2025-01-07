@@ -33,7 +33,11 @@
       "changeProcessCWD": true
     },
     {
-      "directory": "packages/eslint-config-custom",
+      "directory": "packages/eslint-config",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "packages/typescript-config",
       "changeProcessCWD": true
     },
     {
@@ -41,7 +45,7 @@
       "changeProcessCWD": true
     },
     {
-      "directory": "packages/utils",
+      "directory": "packages/utils-tna",
       "changeProcessCWD": true
     }
   ],

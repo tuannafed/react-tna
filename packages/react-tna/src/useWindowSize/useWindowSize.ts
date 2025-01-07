@@ -38,7 +38,7 @@ const IS_SERVER = typeof window === 'undefined'
 export function useWindowSize(options: UseWindowSizeOptions<false>): WindowSize
 // CSR version of useWindowSize.
 export function useWindowSize(
-  options?: Partial<UseWindowSizeOptions<true>>,
+  options?: Partial<UseWindowSizeOptions<true>>
 ): WindowSize<number>
 /**
  * Custom hook that tracks the size of the window.
@@ -53,7 +53,7 @@ export function useWindowSize(
  * ```
  */
 export function useWindowSize(
-  options: Partial<UseWindowSizeOptions<boolean>> = {},
+  options: Partial<UseWindowSizeOptions<boolean>> = {}
 ): WindowSize | WindowSize<number> {
   let { initializeWithValue = true } = options
   if (IS_SERVER) {
@@ -75,7 +75,7 @@ export function useWindowSize(
 
   const debouncedSetWindowSize = useDebounceCallback(
     setWindowSize,
-    options.debounceDelay,
+    options.debounceDelay
   )
 
   function handleSize() {

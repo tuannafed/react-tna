@@ -18,7 +18,7 @@ export default function Component() {
       setCount(count + 1)
     },
     // Delay in milliseconds or null to stop it
-    isPlaying ? delay : null,
+    isPlaying ? delay : null
   )
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

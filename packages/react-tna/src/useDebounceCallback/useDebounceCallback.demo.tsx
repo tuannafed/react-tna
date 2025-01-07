@@ -9,7 +9,10 @@ export default function Component() {
 
   return (
     <div>
-      <p>Debounced value: {value}</p>
+      <p>
+        Debounced value:
+        {value}
+      </p>
 
       <input
         type="text"

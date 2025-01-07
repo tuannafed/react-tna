@@ -70,7 +70,7 @@ describe('useTernaryDarkMode()', () => {
 
   it('should accept a custom localStorage key', () => {
     const { result } = renderHook(() =>
-      useTernaryDarkMode({ localStorageKey: 'custom-key' }),
+      useTernaryDarkMode({ localStorageKey: 'custom-key' })
     )
 
     expect(result.current.isDarkMode).toBe(false)
@@ -83,7 +83,7 @@ describe('useTernaryDarkMode()', () => {
     expect(result.current.isDarkMode).toBe(true)
     expect(result.current.ternaryDarkMode).toBe('dark')
     expect(window.localStorage.getItem('custom-key')).toBe(
-      JSON.stringify('dark'),
+      JSON.stringify('dark')
     )
 
     act(() => {
@@ -93,13 +93,13 @@ describe('useTernaryDarkMode()', () => {
     expect(result.current.isDarkMode).toBe(false)
     expect(result.current.ternaryDarkMode).toBe('light')
     expect(window.localStorage.getItem('custom-key')).toBe(
-      JSON.stringify('light'),
+      JSON.stringify('light')
     )
   })
 
   it('should accept a custom default value (dark)', () => {
     const { result } = renderHook(() =>
-      useTernaryDarkMode({ defaultValue: 'dark' }),
+      useTernaryDarkMode({ defaultValue: 'dark' })
     )
 
     expect(result.current.isDarkMode).toBe(true)
@@ -108,7 +108,7 @@ describe('useTernaryDarkMode()', () => {
 
   it('should accept a custom default value (light)', () => {
     const { result } = renderHook(() =>
-      useTernaryDarkMode({ defaultValue: 'light' }),
+      useTernaryDarkMode({ defaultValue: 'light' })
     )
 
     expect(result.current.isDarkMode).toBe(false)

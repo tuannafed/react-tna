@@ -6,7 +6,6 @@ import { useEventCallback } from '../useEventCallback'
 import { useEventListener } from '../useEventListener'
 
 declare global {
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface WindowEventMap {
     'session-storage': CustomEvent
   }
@@ -48,7 +47,7 @@ const IS_SERVER = typeof window === 'undefined'
 export function useSessionStorage<T>(
   key: string,
   initialValue: T | (() => T),
-  options: UseSessionStorageOptions<T> = {},
+  options: UseSessionStorageOptions<T> = {}
 ): [T, Dispatch<SetStateAction<T>>, () => void] {
   const { initializeWithValue = true } = options
 
@@ -60,7 +59,7 @@ export function useSessionStorage<T>(
 
       return JSON.stringify(value)
     },
-    [options],
+    [options]
   )
 
   const deserializer = useCallback<(value: string) => T>(
@@ -86,7 +85,7 @@ export function useSessionStorage<T>(
 
       return parsed as T
     },
-    [options, initialValue],
+    [options, initialValue]
   )
 
   // Get from session storage then
@@ -123,7 +122,7 @@ export function useSessionStorage<T>(
     // Prevent build error "window is undefined" but keeps working
     if (IS_SERVER) {
       console.warn(
-        `Tried setting sessionStorage key “${key}” even though environment is not a client`,
+        `Tried setting sessionStorage key “${key}” even though environment is not a client`
       )
     }
 
@@ -148,7 +147,7 @@ export function useSessionStorage<T>(
     // Prevent build error "window is undefined" but keeps working
     if (IS_SERVER) {
       console.warn(
-        `Tried removing sessionStorage key “${key}” even though environment is not a client`,
+        `Tried removing sessionStorage key “${key}” even though environment is not a client`
       )
     }
 
@@ -177,7 +176,7 @@ export function useSessionStorage<T>(
       }
       setStoredValue(readValue())
     },
-    [key, readValue],
+    [key, readValue]
   )
 
   // this only works for other documents, not the current one

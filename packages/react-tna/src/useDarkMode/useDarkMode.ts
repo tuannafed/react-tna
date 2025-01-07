@@ -64,7 +64,7 @@ export function useDarkMode(options: DarkModeOptions = {}): DarkModeReturn {
   const [isDarkMode, setDarkMode] = useLocalStorage<boolean>(
     localStorageKey,
     defaultValue ?? isDarkOS ?? false,
-    { initializeWithValue },
+    { initializeWithValue }
   )
 
   // Update darkMode if os prefers changes

@@ -17,7 +17,10 @@ export default function Component() {
   }
   return (
     <div>
-      <p>Count: {count}</p>
+      <p>
+        Count:
+        {count}
+      </p>
 
       <input
         type="number"
