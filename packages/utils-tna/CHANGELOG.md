@@ -1,5 +1,11 @@
 # utils-tna
 
+## 1.2.1
+
+### Patch Changes
+
+- Build package
+
 ## 1.2.0
 
 ### Minor Changes
