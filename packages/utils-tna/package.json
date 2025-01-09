@@ -1,11 +1,9 @@
 {
   "name": "utils-tna",
-  "version": "1.2.1",
+  "version": "1.2.10",
   "private": false,
   "sideEffects": false,
-  "type": "module",
   "description": "This is the repository to make some utils functions, re-libraries, helpers, constants, types, etc...",
-  "main": "index.js",
   "keywords": [
     "dayjs",
     "http-status-code",
@@ -14,6 +12,16 @@
   ],
   "author": "TuanNA <tuanna.fesd@gmail.com>",
   "license": "ISC",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -24,20 +32,20 @@
     "clean": "rimraf dist node_modules"
   },
   "dependencies": {
-    "clsx": "^2.1.1",
-    "dayjs": "^1.11.13",
-    "lodash": "^4.17.21"
+    "dayjs": "^1.11.13"
   },
   "devDependencies": {
     "@edge-runtime/vm": "^5.0.0",
     "@repo/eslint-config": "workspace:^",
     "@repo/typescript-config": "workspace:^",
     "@types/fs-extra": "^11.0.4",
+    "@types/lodash": "^4.17.14",
     "@types/qs": "^6.9.17",
     "colorette": "^2.0.20",
     "eslint": "^9.17.0",
     "eslint-plugin-jsdoc": "^50.6.1",
     "eslint-plugin-tree-shaking": "^1.12.2",
+    "lodash": "^4.17.21",
     "markdown-table": "^3.0.4",
     "prettier": "^3.4.2",
     "qs": "^6.13.1",
@@ -47,7 +55,7 @@
     "vitest": "^2.1.8"
   },
   "engines": {
-    "node": ">=16.15.0"
+    "node": ">=18.18.0"
   },
   "files": [
     "dist",

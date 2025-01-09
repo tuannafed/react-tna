@@ -35,7 +35,7 @@ function isDayjs(value: any): value is Dayjs {
  * console.log(formattedDate); // "2021-01-01"
  * ```
  */
-export function formatDate(
+function formatDate(
   date: Dayjs | string | Date,
   format: string = 'YYYY-MM-DD',
 ): string {
@@ -55,7 +55,7 @@ export function formatDate(
  * console.log(today); // true
  * ```
  */
-export function isToday(date: Dayjs | string | Date): boolean {
+function isToday(date: Dayjs | string | Date): boolean {
   return dayjs(date).isSame(dayjs(), 'day')
 }
 
@@ -72,7 +72,7 @@ export function isToday(date: Dayjs | string | Date): boolean {
  * console.log(past); // true
  * ```
  */
-export function isPast(date: Dayjs | string | Date): boolean {
+function isPast(date: Dayjs | string | Date): boolean {
   return dayjs(date).isBefore(dayjs(), 'day')
 }
 
@@ -89,7 +89,7 @@ export function isPast(date: Dayjs | string | Date): boolean {
  * console.log(future); // true
  * ```
  */
-export function isFuture(date: Dayjs | string | Date): boolean {
+function isFuture(date: Dayjs | string | Date): boolean {
   return dayjs(date).isAfter(dayjs(), 'day')
 }
 
@@ -108,7 +108,7 @@ export function isFuture(date: Dayjs | string | Date): boolean {
  * console.log(difference); // 100
  * ```
  */
-export function dateDifference(
+function dateDifference(
   date1: Dayjs | string | Date,
   date2: Dayjs | string | Date,
   unit: dayjs.ManipulateType = 'days',
@@ -130,7 +130,7 @@ export function dateDifference(
  * console.log(newDate); // Date object for one week from now
  * ```
  */
-export function addDays(date: Dayjs | string | Date, days: number): Dayjs {
+function addDays(date: Dayjs | string | Date, days: number): Dayjs {
   return dayjs(date).add(days, 'day')
 }
 
@@ -148,7 +148,7 @@ export function addDays(date: Dayjs | string | Date, days: number): Dayjs {
  * console.log(newDate); // Date object for one week ago
  * ```
  */
-export function subtractDays(date: Dayjs | string | Date, days: number): Dayjs {
+function subtractDays(date: Dayjs | string | Date, days: number): Dayjs {
   return dayjs(date).subtract(days, 'day')
 }
 
@@ -165,7 +165,7 @@ export function subtractDays(date: Dayjs | string | Date, days: number): Dayjs {
  * console.log(start); // Date object for the start of the week
  * ```
  */
-export function startOfWeek(date: Dayjs | string | Date): Dayjs {
+function startOfWeek(date: Dayjs | string | Date): Dayjs {
   return dayjs(date).startOf('week')
 }
 
@@ -182,7 +182,7 @@ export function startOfWeek(date: Dayjs | string | Date): Dayjs {
  * console.log(end); // Date object for the end of the week
  * ```
  */
-export function endOfWeek(date: Dayjs | string | Date): Dayjs {
+function endOfWeek(date: Dayjs | string | Date): Dayjs {
   return dayjs(date).endOf('week')
 }
 
@@ -199,7 +199,7 @@ export function endOfWeek(date: Dayjs | string | Date): Dayjs {
  * console.log(start); // Date object for the start of the month
  * ```
  */
-export function startOfMonth(date: Dayjs | string | Date): Dayjs {
+function startOfMonth(date: Dayjs | string | Date): Dayjs {
   return dayjs(date).startOf('month')
 }
 
@@ -216,9 +216,24 @@ export function startOfMonth(date: Dayjs | string | Date): Dayjs {
  * console.log(end); // Date object for the end of the month
  * ```
  */
-export function endOfMonth(date: Dayjs | string | Date): Dayjs {
+function endOfMonth(date: Dayjs | string | Date): Dayjs {
   return dayjs(date).endOf('month')
 }
 
 // Exporting dayjs for external usage
-export { Dayjs, dayjs, isDayjs }
+export {
+  Dayjs,
+  dayjs,
+  isDayjs,
+  formatDate,
+  isToday,
+  isPast,
+  isFuture,
+  dateDifference,
+  addDays,
+  subtractDays,
+  startOfWeek,
+  endOfWeek,
+  startOfMonth,
+  endOfMonth,
+}

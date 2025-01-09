@@ -1,6 +1,6 @@
 {
   "name": "react-tna",
-  "version": "1.2.0",
+  "version": "1.2.3",
   "description": "React hook library, ready to use, written in Typescript.",
   "private": false,
   "author": "TuanNA <tuanna.fesd@gmail.com>",
@@ -58,13 +58,14 @@
     "vitest": "^2.1.8"
   },
   "peerDependencies": {
-    "react": "^16.8.0  || ^17 || ^18"
+    "react": "^16.8.0  || ^17 || ^18 || ^19"
   },
   "engines": {
-    "node": ">=16.15.0"
+    "node": ">=18.18.0"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "repository": {
     "type": "git",
